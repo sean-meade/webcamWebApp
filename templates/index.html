@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Video Surveillance</title>
+    </head>
+    <body>
+        <h1>Video Surveillance</h1>
+        <!--
+            notice how we are instructing Flask 
+            to dynamically render the URL of our 
+            video_feed route
+        
+            Since the video_feed function is 
+            responsible for serving up frames 
+            from our webcam, the src of the 
+            image will be automatically populated 
+            with our output frames.
+        -->
+        <img src="{{ url_for('video_feed') }}">
+    </body>
+</html>
