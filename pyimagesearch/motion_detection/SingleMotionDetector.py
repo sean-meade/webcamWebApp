@@ -59,19 +59,19 @@ class SingleMotionDetector:
         # passed in, then thresholdth delta image
         """Given our input image we compute the absolute difference between the 
         image and the bg:"""
-        delta = cv2.absdiff(self.bg.astype("unit8"), image)
+        delta = cv2.absdiff(self.bg.astype("uint8"), image)
         """
         Any pixel locations that have a difference > tVal are set to 255 (white; foreground), 
         otherwise they are set to 0 (black; background):
         """
-        thresh = cv2.threhold(delta, tVal, 255, cv2.THRESH_BINARY)[1]
+        thresh = cv2.threshold(delta, tVal, 255, cv2.THRESH_BINARY)[1]
 
         # perform a series of erosions and dilations to remove small blobs
         """
         A series of erosions and dilations are performed to remove noise and small, localized 
         areas of motion that would otherwise be considered false-positives (like:
         """
-        thresh = cv2.erode(thresh, None, iteration = 2)
+        thresh = cv2.erode(thresh, None, iterations = 2)
         thresh = cv2.dilate(thresh, None, iterations = 2)
 
         """

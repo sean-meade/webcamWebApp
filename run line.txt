@@ -1,3 +1,4 @@
 ip - 192.168.2.237
 port - 8000
 python webstreaming.py --ip 192.168.2.237 --port 8000
+<img src="{{ url_for('video_feed') }}">s

@@ -1,5 +1,4 @@
-# import the necessary packages
-from pyimagesearch.motion_detection import SingleMotionDetector 
+from pyimagesearch.motion_detection import SingleMotionDetector
 # The VideoStream class (Line 3) will enable us to access our Raspberry Pi camera module 
 # or USB webcam.
 import imutils
@@ -14,7 +13,6 @@ from flask import render_template
 import threading
 import argparse
 import datetime
-import imutils
 import time
 import cv2
 
